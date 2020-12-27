@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>딥러닝을 활용한 점자 이미지 학습</title>
+    <style>
+        {# 바디태그 전체 폰트 지정 #}
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+        {# 사이트 전제 색상 #}
+        .main-container {
+            background: linear-gradient( to top, snow, lightskyblue );
+        }
+        {#네비게이션 상단 바#}
+        .navigation {
+            width: 100%;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        li:last-child {
+            border-right: none;
+        }
+        {# 팀 이름 #}
+        .team{
+            color: white;
+            font-size: 2rem;
+            margin-left: 2rem;
+            margin-top: 4rem;
+        }
+        .team {
+            color: white;
+            font-size: 2rem;
+            margin-left: 2rem;
+            margin-top: 2rem;
+        }
+        {# 이미지 뷰 #}
+        .select {
+            margin-left: 9.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            color: white;
+        }
+        .image-box {
+            width: 70rem;
+            height: 20rem;
+            background: black;
+            margin: 0 auto;
+            padding: 1.5rem;
+            z-index: 1;
+        }
+        .image-view {
+            margin-left: 3.7rem;
+        }
+        {# 타이틀 #}
+        .title {
+            font-size: 6rem;
+            text-align: center;
+            color: white;
+        }
+        {# 번역하기 버튼 #}
+        .translate {
+            margin-left: 45%;
+            margin-top: 3rem;
+            border-radius: 20px;
+            border: white;
+            background-color: white;
+            width: 9rem;
+            height: 3rem;
+            font-size: 1.25rem;
+            color: lightskyblue;
+        }
+        .translate:hover {
+            border: lightskyblue;
+            background-color: lightskyblue;
+            color: white;
+        }
+        {# 정답 출력 부분 #}
+        .output-text {
+            margin-left: 42%;
+            margin-top: 3rem;
+            border-radius: 20px;
+            border: white;
+            background-color: white;
+            width: 14rem;
+            height: 3rem;
+            color: black;
+        }
+        .output-text-css {
+            border: none;
+            outline: none;
+            font-size: 1.1rem;
+            margin-top: 0.9rem;
+            margin-left: 1rem;
+        }
+        {# tts 버튼 #}
+        .button {
+            margin-left: 42%;
+            margin-top: 3rem;
+            border: none;
+            outline: none;
+            background-color: white;
+            width: 15rem;
+            height: 10rem;
+        }
+        .button:hover {
+            background-color: lightskyblue;
+        }
+    </style>
+</head>
+<body>
+<script>
+    function setThumbnail(event) {
+        const reader = new FileReader();
+
+        reader.onload = function(event) {
+            const img = document.createElement("img");
+            img.setAttribute("src", event.target.result);
+            img.setAttribute("width", 1000);
+            img.setAttribute("height", 300);
+            document.querySelector("div.image-view").appendChild(img);
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    }
+</script>
+<div class="main-container">
+    <div class="navigation">
+        <ul><!--
+            <li class="team">Notting Hill (2팀)</li>
+            <li style="float:right" class="github-link">
+                <a href="https://github.com/BoYeonJang/korean-braille" target="_blank">
+                    <img class="github" src="{{ url_for('static', filename='image/github.png') }}" />
+                </a>
+            </li>
+            -->
+        </ul>
+    </div>
+    <div class="title">
+        <h1 class="title">점자 이미지</h1>
+    </div>
+    <div class="image-select">
+        <form action="http://localhost:5000/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="profile" id="image" class="select" accept="image/*" onchange="setThumbnail(event);">
+            <div class="image-box">
+                <div class="image-view">
+
+                </div>
+            </div>
+            <div>
+                <input type="submit" class="translate" value="번역하기">
+            </div>
+        </form>
+    </div>
+    <div class="output">
+        <div class="output-text">
+            <input type="name" class="output-text-css" name="result" value={{ rst }}>
+        </div>
+        <div class="output-tts">
+            <form action="http://localhost:5000/play" method="post" enctype="multipart/form-data">
+                <button type="submit" class="button">
+                    <img src="{{ url_for('static', filename='image/polly-tts.png') }}">
+                </button>
+                <input type="hidden" name="result2" value="{{ rst }}">
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

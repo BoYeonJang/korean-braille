@@ -1,0 +1,10 @@
+.title {
+    font-size: 200%;
+    color: aqua;
+}
+
+.img_btn {
+    width: 300px;
+    height: 150px;
+    object-fit: cover;
+}

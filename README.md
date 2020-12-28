@@ -1,4 +1,14 @@
 # korean-braille
+<h1>프로젝트 소개</h1>
+<p>한글 점자 이미지(흑백, 컬러)를 학습하여 결과를 예측하고 음성으로 변환하여 출력</p>
+<h1>팀 소개</h1>
+<blockquote>
+  <p>
+    <a href="https://github.com/BoYeonJang">장보연</a>
+    <br>
+    <a href="https://github.com/Lee-yeonho">이연호</a>
+  </p>
+</blockquote>
 <h1>서비스 아키텍처</h1>
 <p>
   <img src="https://user-images.githubusercontent.com/59506394/103236776-17963800-4989-11eb-98fa-b2e5e936cc10.png" width="700">

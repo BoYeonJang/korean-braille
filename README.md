@@ -4,7 +4,7 @@
   <img src="https://user-images.githubusercontent.com/59506394/103236776-17963800-4989-11eb-98fa-b2e5e936cc10.png" width="700">
 </p>
 <h1>기술 스택</h1>
-<table align="center">
+<table>
   <tr align="center">
     <td><strong>웹 구현</strong></td>
     <td><strong>웹 프레임워크</strong></td>
@@ -13,7 +13,7 @@
     <td><strong>기능</strong></td>
     <td><strong>모델</strong></td>
   </tr>
-  <tr>
+  <tr align="center">
     <td>
       <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/>
       <br>

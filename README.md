@@ -1,7 +1,7 @@
 # korean-braille
 <h1>서비스 아키텍처</h1>
 <p>
-  <img src="https://user-images.githubusercontent.com/59506394/103236776-17963800-4989-11eb-98fa-b2e5e936cc10.png" width="700">
+  <img src="https://user-images.githubusercontent.com/59506394/103236776-17963800-4989-11eb-98fa-b2e5e936cc10.png" width="800">
 </p>
 <h1>기술 스택</h1>
 <table align="center">
@@ -50,6 +50,6 @@
 </table>
 <h1>기능 구현</h1>
 <p>
-  <img src="https://user-images.githubusercontent.com/59506394/103234700-a738e800-4983-11eb-8528-10955e280109.gif" width="500">
-  <img src="https://user-images.githubusercontent.com/59506394/103234723-b0c25000-4983-11eb-80e0-dcd622186219.gif" width="500">
+  <img src="https://user-images.githubusercontent.com/59506394/103234700-a738e800-4983-11eb-8528-10955e280109.gif" width="400">
+  <img src="https://user-images.githubusercontent.com/59506394/103234723-b0c25000-4983-11eb-80e0-dcd622186219.gif" width="400">
 </p>
